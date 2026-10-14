@@ -128,50 +128,48 @@
   .band-icon {
     width: 90vw;
     max-width: 90vw;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
+}
 
-    .hero:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(
-        0deg,
-        rgba(10, 10, 14, .72),
-        transparent 70%
-      );
-    }
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 10, 14, .72),
+    transparent 70%
+  );
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: clamp(40px, 8vw, 100px) 0;
-      width: 100%;
-    }
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: clamp(40px, 8vw, 100px) 0;
+  width: 100%;
+}
 
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .2em;
-    }
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
 
-    /* THE DARK APPLIES TO THE LARGE HERO HEADING ONLY */
-    .hero h1 {
-      font-family: "The Dark", sans-serif;
-      font-weight: 400;
-      font-size: clamp(3.5rem, 12vw, 9.5rem);
-      line-height: 1;
-      letter-spacing: 0;
-      text-transform: uppercase;
-      max-width: 1000px;
-      margin: 22px 0;
-      overflow-wrap: anywhere;
-    }
+/* THE DARK APPLIES TO THE LARGE HERO HEADING ONLY */
+.hero h1 {
+  font-family: "The Dark", sans-serif;
+  font-weight: 400;
+  font-size: clamp(3.5rem, 12vw, 9.5rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  max-width: 1000px;
+  margin: 22px 0;
+  overflow-wrap: anywhere;
+}
 
     .tagline {
       font-size: clamp(1rem, 2vw, 1.35rem);
