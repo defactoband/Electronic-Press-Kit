@@ -7,6 +7,15 @@
   <title>DEFACTO — Electronic Press Kit</title>
 
   <style>
+    .band-icon {
+  display: block;
+  width: clamp(120px, 22vw, 260px);
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+}
     /* THE DARK FONT */
     @font-face {
       font-family: "The Dark";
@@ -131,7 +140,12 @@
       font-weight: 800;
       letter-spacing: .2em;
     }
-
+    
+<img
+  src="./band in hat 1.png"
+  alt="Defacto band icon"
+  class="band-icon"
+/>
     /* THE DARK APPLIES TO THE LARGE HERO HEADING ONLY */
     .hero h1 {
       font-family: "The Dark", sans-serif;
