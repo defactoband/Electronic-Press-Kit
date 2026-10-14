@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Electronic press kit for Defacto. Music, video, biography, press photos and booking contact.">
   <title>DEFACTO — Electronic Press Kit</title>
-  <style> @font-face {
-  font-family: "The Dark";
-  src: url("TheDark-pr2Z.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+
+  <style>
+    /* THE DARK FONT */
+    @font-face {
+      font-family: "The Dark";
+      src: url("./TheDark-pr2Z.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --bg: #101014;
       --panel: #191920;
@@ -21,75 +25,331 @@
       --line: rgba(255,255,255,.16);
       --max: 1120px;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont,
+            "Segoe UI", sans-serif;
+    }
+
     a { color: inherit; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-    .nav { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 0; border-bottom:1px solid var(--line); }
-    .wordmark { font-size:.85rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; }
-    .navlinks { display:flex; flex-wrap:wrap; gap:18px; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
-    .navlinks a { text-decoration:none; color:var(--muted); }
-    .navlinks a:hover { color:var(--text); }
-    .hero { min-height: min(780px, 88vh); display:flex; align-items:end; position:relative; overflow:hidden; margin-bottom:80px; background: radial-gradient(ellipse at 72% 30%, rgba(255,101,79,.35), transparent 34%), linear-gradient(135deg,#34303a 0%,#17151c 48%,#09090c 100%); }
-    /* To use your own hero photo, add hero.jpg to the repository and uncomment the next line:
-       .hero { background: linear-gradient(0deg, rgba(10,10,14,.92), rgba(10,10,14,.08)), url("hero.jpg") center/cover no-repeat; }
-    */
-    .hero:after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(0deg,rgba(10,10,14,.72),transparent 70%); }
-    .hero-content { position:relative; z-index:1; padding: clamp(40px, 8vw, 100px) 0; width:100%; }
-    .eyebrow { color:var(--accent); text-transform:uppercase; font-size:.78rem; font-weight:800; letter-spacing:.2em; }
-    h1 {
-  font-family: "The Dark", sans-serif;
-  font-size: clamp(3.5rem, 12vw, 9.5rem);
-  line-height: .95;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  max-width: 1000px;
-  margin: 22px 0;
-  overflow-wrap: anywhere;
-}
-    .tagline { font-size:clamp(1rem,2vw,1.35rem); color:#e1dce5; max-width:650px; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
-    .button { display:inline-block; padding:12px 18px; border:1px solid var(--text); border-radius:2px; text-decoration:none; text-transform:uppercase; font-size:.78rem; font-weight:800; letter-spacing:.08em; }
-    .button.primary { background:var(--accent); border-color:var(--accent); color:#130d0d; }
-    section { padding:0 0 86px; scroll-margin-top:30px; }
-    .section-head { display:grid; grid-template-columns:150px 1fr; gap:30px; align-items:start; margin-bottom:28px; }
-    .num { color:var(--accent); font-size:.8rem; letter-spacing:.15em; font-weight:800; padding-top:12px; }
-    h2 { margin:0; font-size:clamp(2rem,5vw,4rem); line-height:1; letter-spacing:-.055em; text-transform:uppercase; }
-    .lead { max-width:760px; font-size:1.15rem; color:#e2dde6; }
-    .muted { color:var(--muted); }
-    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
-    .card { background:var(--panel); border:1px solid var(--line); padding:24px; min-width:0; }
-    .card h3 { margin:0 0 10px; font-size:1.05rem; text-transform:uppercase; letter-spacing:.05em; }
-    .embed { width:100%; aspect-ratio:16/9; border:0; display:block; background:#24232b; }
-    .audio-embed { width:100%; height:166px; border:0; display:block; background:#24232b; }
-    .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-    .photo { min-height:230px; display:flex; align-items:end; padding:16px; background:linear-gradient(145deg,#3b303c,#1d1b24); border:1px solid var(--line); color:var(--muted); font-size:.85rem; }
-    .photo img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
-    .photo { position:relative; overflow:hidden; }
-    .photo span { position:relative; z-index:1; background:rgba(0,0,0,.6); padding:4px 8px; }
-    .quote { border-left:3px solid var(--accent); padding:4px 0 4px 20px; font-size:1.2rem; }
-    .contact { background:var(--accent); color:#160f10; padding:clamp(28px,6vw,64px); }
-    .contact h2 { max-width:700px; }
-    .contact a { font-weight:800; }
-    footer { padding:25px 0 40px; border-top:1px solid var(--line); color:var(--muted); font-size:.8rem; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
-    @media (max-width:700px) {
-      .nav { align-items:flex-start; flex-direction:column; }
-      .navlinks { gap:12px; }
-      .hero { min-height:72vh; margin-bottom:58px; }
-      .section-head { grid-template-columns:1fr; gap:8px; }
-      .grid2, .photo-grid { grid-template-columns:1fr; }
-      .photo { min-height:250px; }
-      section { padding-bottom:60px; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* TOP NAVIGATION — original small text retained */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      font-size: .85rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .navlinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .navlinks a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      min-height: min(780px, 88vh);
+      display: flex;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 80px;
+      background:
+        radial-gradient(
+          ellipse at 72% 30%,
+          rgba(255,101,79,.35),
+          transparent 34%
+        ),
+        linear-gradient(
+          135deg,
+          #34303a 0%,
+          #17151c 48%,
+          #09090c 100%
+        );
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        0deg,
+        rgba(10,10,14,.72),
+        transparent 70%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: clamp(40px, 8vw, 100px) 0;
+      width: 100%;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+    }
+
+    /* THE DARK APPLIES TO THE LARGE HERO HEADING ONLY */
+    .hero h1 {
+      font-family: "The Dark", sans-serif;
+      font-weight: 400;
+      font-size: clamp(3.5rem, 12vw, 9.5rem);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      max-width: 1000px;
+      margin: 22px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: #e1dce5;
+      max-width: 650px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--text);
+      border-radius: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #130d0d;
+    }
+
+    section {
+      padding: 0 0 86px;
+      scroll-margin-top: 30px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 30px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .num {
+      color: var(--accent);
+      font-size: .8rem;
+      letter-spacing: .15em;
+      font-weight: 800;
+      padding-top: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: 1.15rem;
+      color: #e2dde6;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 24px;
+      min-width: 0;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .embed {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 0;
+      display: block;
+      background: #24232b;
+    }
+
+    .audio-embed {
+      width: 100%;
+      height: 166px;
+      border: 0;
+      display: block;
+      background: #24232b;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .photo {
+      min-height: 230px;
+      display: flex;
+      align-items: end;
+      padding: 16px;
+      background: linear-gradient(145deg, #3b303c, #1d1b24);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .85rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .photo span {
+      position: relative;
+      z-index: 1;
+      background: rgba(0,0,0,.6);
+      padding: 4px 8px;
+    }
+
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 20px;
+      font-size: 1.2rem;
+    }
+
+    .contact {
+      background: var(--accent);
+      color: #160f10;
+      padding: clamp(28px, 6vw, 64px);
+    }
+
+    .contact h2 { max-width: 700px; }
+    .contact a { font-weight: 800; }
+
+    footer {
+      padding: 25px 0 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .8rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .navlinks { gap: 12px; }
+
+      .hero {
+        min-height: 72vh;
+        margin-bottom: 58px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 14vw, 6rem);
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .grid2, .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo { min-height: 250px; }
+      section { padding-bottom: 60px; }
     }
   </style>
 </head>
+
 <body>
   <header class="wrap nav">
     <a class="wordmark" href="#top">Defacto</a>
     <nav class="navlinks" aria-label="Main navigation">
-      <a href="#music">Music</a><a href="#video">Video</a><a href="#about">About</a><a href="#photos">Photos</a><a href="#contact">Contact</a>
+      <a href="#music">Music</a>
+      <a href="#video">Video</a>
+      <a href="#about">About</a>
+      <a href="#photos">Photos</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -101,89 +361,130 @@
         <p class="tagline">Bristol-based indie rock band providing original guitar-driven music since 1996.</p>
         <div class="actions">
           <a class="button primary" href="#music">Listen now ↘</a>
-          <a class="button" href="#contact">Booking & press</a>
+          <a class="button" href="#contact">Booking &amp; press</a>
         </div>
       </div>
     </div>
 
     <div class="wrap">
       <section id="music">
-        <div class="section-head"><div class="num">01 / LISTEN</div><h2>Music</h2></div>
+        <div class="section-head">
+          <div class="num">01 / LISTEN</div>
+          <h2>Music</h2>
+        </div>
+
         <p class="lead">Put your strongest release first. Replace the example embed below with your track or album player.</p>
+
         <div class="grid2">
           <div class="card">
             <h3>Featured release</h3>
-            <!-- Replace this placeholder with the embed code from SoundCloud, Bandcamp, or another music host.
-                 For SoundCloud: open the track → Share → Embed → Copy the iframe code, then paste it here. -->
-            <div class="embed" style="display:grid;place-items:center;padding:20px;text-align:center;color:#b9b4c0;"><iframe
-  style="border-radius:12px"
-  src="https://open.spotify.com/embed/album/7iIVSsMP1Y9K8PQIOaFzqk?utm_source=generator"
-  width="100%"
-  height="352"
-  frameborder="0"
-  allowfullscreen
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  loading="lazy">
-</iframe></div>
+            <iframe
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/7iIVSsMP1Y9K8PQIOaFzqk?utm_source=generator"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Defacto — Blue Eyes and Violins on Spotify">
+            </iframe>
             <p class="muted">Blue Eyes and Violins · March 2026 · Recorded at Dockside Studios Bristol</p>
           </div>
+
           <div class="card">
             <h3>Listen elsewhere</h3>
-            <p class="muted">Add direct links to streaming platforms. Spotify links may open the Spotify app or website; an embed player can be added too.</p>
+            <p class="muted">Listen to Defacto on your preferred streaming platform.</p>
             <p><a href="https://open.spotify.com/album/7iIVSsMP1Y9K8PQIOaFzqk?si=J7zjamv5R3SzOJm5cIXSig/" target="_blank" rel="noopener">Spotify ↗</a></p>
             <p><a href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud ↗</a></p>
-            <p><a href="https://amazon.co.uk/music/player/albums/B0GT77HS2H?marketplaceId=A1F83G8C2ARO7P&musicTerritory=GB&ref=dm_sh_9CpSSvA11wcFGKfEOVIUOjkQx" target="_blank" rel="noopener">Amazon Music ↗</a></p>
+            <p><a href="https://amazon.co.uk/music/player/albums/B0GT77HS2H?marketplaceId=A1F83G8C2ARO7P&amp;musicTerritory=GB&amp;ref=dm_sh_9CpSSvA11wcFGKfEOVIUOjkQx" target="_blank" rel="noopener">Amazon Music ↗</a></p>
             <p><a href="https://bandcamp.com/" target="_blank" rel="noopener">Bandcamp ↗</a></p>
           </div>
         </div>
       </section>
 
       <section id="video">
-        <div class="section-head"><div class="num">02 / WATCH</div><h2>Video</h2></div>
+        <div class="section-head">
+          <div class="num">02 / WATCH</div>
+          <h2>Video</h2>
+        </div>
+
         <div class="grid2">
           <div class="card">
             <h3>Live session</h3>
-            <!-- Replace this box with YouTube's embed iframe:
-                 YouTube video → Share → Embed → copy the iframe and paste it here. -->
-            <div class="embed" style="display:grid;place-items:center;padding:20px;text-align:center;color:#b9b4c0;"><iframe width="100%" height="315" src="https://www.youtube.com/embed/e90UBEviBEQ?si=lERzvckDf48LoyNX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <iframe
+              class="embed"
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/e90UBEviBEQ?si=lERzvckDf48LoyNX"
+              title="Defacto live session"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
             <p class="muted">Live at Three Bras Monkeys, WSM - October 2026</p>
           </div>
+
           <div class="card">
             <h3>Official video</h3>
-            <div class="embed" style="display:grid;place-items:center;padding:20px;text-align:center;color:#b9b4c0;"><iframe width="100%" height="315" src="https://www.youtube.com/embed/k4JJo2sMbig?si=FHBCdMQ1hf9jybP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <iframe
+              class="embed"
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/k4JJo2sMbig?si=FHBCdMQ1hf9jybP4"
+              title="Blue Eyes and Violins — official music video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
             <p class="muted">Blue Eyes and Violins - official music video</p>
           </div>
         </div>
       </section>
 
       <section id="about">
-        <div class="section-head"><div class="num">03 / THE STORY</div><h2>About</h2></div>
+        <div class="section-head">
+          <div class="num">03 / THE STORY</div>
+          <h2>About</h2>
+        </div>
+
         <p>Defacto are a Bristol-based indie rock band originally formed in 1996. Through the release of numerous EPs and albums over the years, they have established a distinctive presence on the live music scene.</p>
+
         <p>Defacto brings together Marc, Ellie, Cerith, and Ollie. Their latest release, Blue Eyes and Violins, has been 30 years in the making and explores how love can alleviate destructive behaviors and relieve the feeling of isolation.</p>
+
         <p>Following an extended hiatus, the band return in 2026 marking the start of a new chapter in their story. The band is currently working on new material whilst promoting the release of Blue Eyes and Violins. For bookings, interviews and press enquiries, use the contact details below.</p>
+
         <div class="quote">“Add a short press quote here.” <span class="muted">— Publication / reviewer</span></div>
       </section>
 
       <section id="photos">
-        <div class="section-head"><div class="num">04 / DOWNLOADS</div><h2>Press photos</h2></div>
+        <div class="section-head">
+          <div class="num">04 / DOWNLOADS</div>
+          <h2>Press photos</h2>
+        </div>
+
         <p class="muted">Add approved press images below. Include a download link to a high-resolution image pack and credit the photographer.</p>
+
         <div class="photo-grid">
           <div class="photo"><span>ADD photo-1.jpg · Band portrait</span></div>
           <div class="photo"><span>ADD photo-2.jpg · Live photo</span></div>
           <div class="photo"><span>ADD photo-3.jpg · Alternative portrait</span></div>
         </div>
+
         <div class="actions">
-          <!-- Put the press pack file in this same repository and update the filename below. -->
           <a class="button" href="press-photos.zip" download>Download press photo pack ↓</a>
           <a class="button" href="band-biography.txt" download>Download biography ↓</a>
         </div>
+
         <p class="muted">Photo credit: ADD PHOTOGRAPHER NAME. Please credit the photographer when publishing.</p>
       </section>
 
       <section id="contact">
         <div class="contact">
           <div class="eyebrow" style="color:#291515;">05 / GET IN TOUCH</div>
-          <h2>Bookings, press & enquiries</h2>
+          <h2>Bookings, press &amp; enquiries</h2>
           <p>For bookings, interviews, collaborations and press materials:</p>
           <p><strong>Email:</strong> <a href="mailto:blueeyesandviolins@gmail.com">blueeyesandviolins@gmail.com</a></p>
           <p><strong>Based in:</strong> Bristol</p>
