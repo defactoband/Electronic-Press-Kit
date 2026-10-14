@@ -7,15 +7,6 @@
   <title>DEFACTO — Electronic Press Kit</title>
 
   <style>
-    .band-icon {
-  display: block;
-  width: clamp(120px, 22vw, 260px);
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto 20px;
-  position: relative;
-  z-index: 1;
-}
     /* THE DARK FONT */
     @font-face {
       font-family: "The Dark";
@@ -31,7 +22,7 @@
       --text: #f4f1f5;
       --muted: #b9b4c0;
       --accent: #ff654f;
-      --line: rgba(0,255,0,.16);
+      --line: rgba(190, 255, 0, .20);
       --max: 1120px;
     }
 
@@ -58,7 +49,7 @@
       margin-inline: auto;
     }
 
-    /* TOP NAVIGATION — original small text retained */
+    /* TOP NAVIGATION — SMALL WORDMARK UNCHANGED */
     .nav {
       display: flex;
       justify-content: space-between;
@@ -92,7 +83,7 @@
 
     .navlinks a:hover { color: var(--text); }
 
-    /* HERO */
+    /* HERO BANNER */
     .hero {
       min-height: min(780px, 88vh);
       display: flex;
@@ -100,11 +91,14 @@
       position: relative;
       overflow: hidden;
       margin-bottom: 80px;
+
+      /* DARK BACKGROUND WITH LIME-GREEN RADIAL GLOW */
       background:
         radial-gradient(
           ellipse at 72% 30%,
-          rgba(0,255,0,.35),
-          transparent 34%
+          rgba(190, 255, 0, .36) 0%,
+          rgba(140, 210, 0, .16) 24%,
+          transparent 48%
         ),
         linear-gradient(
           135deg,
@@ -114,6 +108,19 @@
         );
     }
 
+    /* BAND HAT ICON — LAYERED OVER THE BANNER */
+    .band-icon {
+      position: absolute;
+      top: clamp(24px, 6vw, 70px);
+      right: clamp(20px, 8vw, 110px);
+      display: block;
+      width: clamp(120px, 22vw, 260px);
+      height: auto;
+      object-fit: contain;
+      z-index: 2;
+      pointer-events: none;
+    }
+
     .hero:after {
       content: "";
       position: absolute;
@@ -121,7 +128,7 @@
       pointer-events: none;
       background: linear-gradient(
         0deg,
-        rgba(10,10,14,.72),
+        rgba(10, 10, 14, .72),
         transparent 70%
       );
     }
@@ -140,12 +147,7 @@
       font-weight: 800;
       letter-spacing: .2em;
     }
-    
-<img
-  src="./band in hat 1.png"
-  alt="Defacto band icon"
-  class="band-icon"
-/>
+
     /* THE DARK APPLIES TO THE LARGE HERO HEADING ONLY */
     .hero h1 {
       font-family: "The Dark", sans-serif;
@@ -293,7 +295,7 @@
     .photo span {
       position: relative;
       z-index: 1;
-      background: rgba(0,0,0,.6);
+      background: rgba(0, 0, 0, .6);
       padding: 4px 8px;
     }
 
@@ -336,6 +338,12 @@
         margin-bottom: 58px;
       }
 
+      .band-icon {
+        width: clamp(100px, 30vw, 160px);
+        top: 24px;
+        right: 20px;
+      }
+
       .hero h1 {
         font-size: clamp(3rem, 14vw, 6rem);
       }
@@ -369,6 +377,14 @@
 
   <main id="top">
     <div class="hero">
+
+      <!-- BAND ICON: KEEP THIS HTML OUTSIDE THE STYLE SECTION -->
+      <img
+        src="./defacto-hat.png"
+        alt="Defacto band icon"
+        class="band-icon"
+      >
+
       <div class="wrap hero-content">
         <div class="eyebrow">Electronic Press Kit · 2026</div>
         <h1>defacto</h1>
