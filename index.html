@@ -39,7 +39,16 @@
     .hero:after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(0deg,rgba(10,10,14,.72),transparent 70%); }
     .hero-content { position:relative; z-index:1; padding: clamp(40px, 8vw, 100px) 0; width:100%; }
     .eyebrow { color:var(--accent); text-transform:uppercase; font-size:.78rem; font-weight:800; letter-spacing:.2em; }
-    h1 { font-size:clamp(3.5rem, 12vw, 9.5rem); line-height:.84; letter-spacing:-.075em; text-transform:uppercase; max-width:1000px; margin:22px 0; overflow-wrap:anywhere; }
+    h1 {
+  font-family: "The Dark", sans-serif;
+  font-size: clamp(3.5rem, 12vw, 9.5rem);
+  line-height: .95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  max-width: 1000px;
+  margin: 22px 0;
+  overflow-wrap: anywhere;
+}
     .tagline { font-size:clamp(1rem,2vw,1.35rem); color:#e1dce5; max-width:650px; }
     .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
     .button { display:inline-block; padding:12px 18px; border:1px solid var(--text); border-radius:2px; text-decoration:none; text-transform:uppercase; font-size:.78rem; font-weight:800; letter-spacing:.08em; }
