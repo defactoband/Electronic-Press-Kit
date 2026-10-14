@@ -323,7 +323,21 @@
 
     .contact h2 { max-width: 700px; }
     .contact a { font-weight: 800; }
+    
+#contact .contact-image {
+  width: 60px;
+  max-width: 20%;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
+@media (max-width: 600px) {
+  #contact .contact-image {
+    width: 35px;
+    max-width: 18%;
+  }
+}
     footer {
       padding: 25px 0 40px;
       border-top: 1px solid var(--line);
